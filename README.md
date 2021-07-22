@@ -19,13 +19,13 @@ Desplegar la imagen en un cluster de Kubernetes
 conectar al contenedor de Jenkins (para instalar el kubectl con el nombre del contenedor de jenkins(jenkinsblue))
 $ docker exec -it --user=root jenkinsblue /bin/bash
 Comando de Instalacion de kubectl en el contenedor de jenkins
-# curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" && chmod +x kubectl
+$# curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" && chmod +x kubectl
 Lo movemos al local donde tiene que quedar los binarios
-# mv ./kubectl /usr/local/bin/kubectl
+mv ./kubectl /usr/local/bin/kubectl
 Verficamos la version del kubectl
-# kubectl version --client
+$# kubectl version --client
 Nos desconectamos del contenedor
-# exit
+$# exit
 Conectar el contenedor de jenkins a la misma red del contenedor de minikube
 $ docker network ls
 Nos interesa el network ID de minikube y lo conectamos con el nombre del contenedor de jenkins
@@ -50,7 +50,3 @@ Instalo el plugin de google Cloud Kubernetes
 Luego vamos a panel de control de jenkins - administrar jenkins - configurar el sistema y buscamos la opcion cloud
 Configuramos la conectividad del cluster de kubernetes (50)
 Crear el Pipeline
- 
-
-
-

@@ -3,7 +3,7 @@ RUN addgroup -S devopsc && adduser -S javams -G devopsc
 USER javams:devopsc
 ENV JAVA_OPTS=""
 ARG JAR_FILE
-ADD ${JAR_FILE} /app.jar
+ADD ${JAR_FILE} app.jar
  # use a volume is mor efficient and speed that filesystem
 VOLUME /tmp
 EXPOSE 7280
